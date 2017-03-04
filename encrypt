@@ -1,0 +1,36 @@
+#!/bin/bash
+
+
+echo "
+
+
+      \_/
+     (* *)
+    __)#(__
+   ( )...( )(_)
+   || |_| ||//
+>==() | | ()/
+    _(___)_
+   [-]   [-]
+
+ Hello, I can assist you with encrypting any file. Please press enter to continue "
+
+read
+
+echo " Please enter the desired file below that you would like me to encrypt for you and press enter."
+
+read file;
+
+# To decrypt the file use this command gpg -d filename.gpg > filename
+
+gpg -c $file
+
+echo " File encryption was successful....Press enter to continue"
+
+read
+
+echo " I am purging your orginal file. "
+
+rm -rf $file
+
+
