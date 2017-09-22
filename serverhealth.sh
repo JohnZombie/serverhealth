@@ -98,7 +98,7 @@ df -h
 ## Load Average across cores:
 echo -e "\e[1;31m Load Average:\e[0m"
 top -n 1 -b | grep "load average:" | awk '{print $10 $11 $12}'
-## Output Results To Text File
+
 
 
 
