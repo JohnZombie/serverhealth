@@ -23,21 +23,31 @@ if [[ ! -z $YUM_CMD ]]; then
 sudo yum install update
 sudo yum install nmap
 sudo yum install net-tools
+sudo yum install mailx
 elif [[ ! -z $APT_GET_CMD ]]; then
 sudo apt-get update
 sudo apt-get install nmap
+sudo apt-get install net-tools
+sudo apt-get install mailutils
 elif [[ ! -z $ZYPPER_CMD ]]; then
 sudo zypper up
 sudo zypper install nmap
+sudo zypper install net-tools
+sudo zypper install mailx
 elif [[ ! -z $PACMAN_CMD ]]; then
 sudo pacman -Syu
 sudo pacman -Sy nmap
+sudo pacman -Sy net-tools
+sudo pacman -Sy mailx
 elif [[ ! -z $FEDORA_CMD ]]; then
-dnf update
-dnf install nmap
+sudo dnf update
+sudo dnf install nmap
+sudo dnf install net-tools
+sudo dnf install mailx
 elif [[ "$OS_var" == "Darwin" ]]; then
 install_brew_osx
 brew install nmap
+brew install mailutils
 else
 echo "error cannot find distro..."
 exit 1;
